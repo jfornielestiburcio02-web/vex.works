@@ -1,0 +1,25 @@
+{
+  "functions": {
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.7.1"
+    }
+  },
+  "routes": [
+    {
+      "src": "/index.php",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/(.*)\\.php",
+      "dest": "/api/$1.php"
+    },
+    {
+      "src": "/(.*)\\.xlx",
+      "status": 404
+    },
+    {
+      "src": "/imagenes/(.*)",
+      "dest": "https://raw.githubusercontent.com/jfornielestiburcio02-web/hostingimage/main/imagenes/$1"
+    }
+  ]
+}
